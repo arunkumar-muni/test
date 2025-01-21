@@ -3,7 +3,7 @@ import numpy as np
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-overlay_path = r'/home/arun/Downloads/images (9).jpeg'
+overlay_path = r'/home/arun/Downloads/download (1).jpeg'
 overlay = cv2.imread(overlay_path, cv2.IMREAD_UNCHANGED)
 
 if overlay is None:
@@ -41,8 +41,8 @@ while True:
         overlay_resized = cv2.resize(overlay, (w, int(w * overlay.shape[0] / overlay.shape[1])))
 
         overlay_h, overlay_w, _ = overlay_resized.shape
-        y_offset = 200
-        x_offset = 250
+        y_offset = y
+        x_offset = x
 
         if y_offset < 0:
             overlay_resized = overlay_resized[-y_offset:, :, :]
